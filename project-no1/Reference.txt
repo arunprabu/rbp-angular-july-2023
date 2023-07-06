@@ -1,0 +1,98 @@
+Building Blocks of Angular 
+=====
+  Components 
+  Services  
+  Guards
+  Modules 
+  Interceptor 
+
+====
+  Basic & Adv Concepts (Project #1)
+    components interaction 
+    databinding 
+    routing 
+    sharing data b/w diff components (Cross Component Communication)
+      1. Parent to Child Component Communication 
+          using custom attribute @Input() 
+      2. Child to Parent Comp Communication 
+          using custom event binding @Output() 
+      3. Any to Any Comp Communication 
+          3.1 using RxJS (Observables, Subject / Behaviour Subject, Subscription) 
+          3.2 using NgRx (many do not have experience)
+
+  Adv Concepts  
+    RxJS 
+    Unit Testing (many do not have experience) (project #1)
+    HttpInterceptor (project #1 )
+    Reusable component library a.k.a angular component library (many do not have experience) (project #2)
+    CI / CD pipelines( project #1 or #2) 
+    Angular 14 features 
+    
+  Third party tools
+  ----
+    NgRx (project #3)
+    Angular Material (many do not have experience) (project #4)
+
+    
+Project Structure
+======
+  #1 -- Building block wise project structure 
+    src/
+      app/
+        components/
+          home/
+        directives/
+        services/
+        modules/
+        guards/
+        pipes/
+        shared/
+
+  #2 -- Feature-wise or page-wise project structure (Recommended)
+    src/
+        app/
+          shared/
+            components/
+              header/
+              footer/
+              menu/
+          concepts/
+            components/
+              employee/
+              ceb/
+              ...
+              ...
+              ...
+            directives/
+              colorizer/
+          about/
+          home/
+          users/
+            components/
+              add-user/
+              user-details/
+              users...
+            services/
+          ...
+          ...
+          ...
+          ...
+          ...
+
+  #3 - Mixing both structure 
+      src/
+        app/
+          home/
+            components/
+            directives/ 
+            services/ 
+          about/ 
+            components/
+            directives/ 
+            services/ 
+          shared/ 
+            components/
+              header/
+              footer/
+
+
