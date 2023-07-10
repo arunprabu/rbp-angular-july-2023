@@ -1,0 +1,18 @@
+<div>
+  <h1>Angular Concepts</h1>
+  <h3>Interpolation</h3>
+  <p>Dev Name: {{devName}}</p>
+  <input type="text" value="{{devName}}">
+
+  <h3>Property Binding</h3>
+  <input type="text" [value]="clientName">
+
+  <h3>Event Binding</h3>
+  <button type="button" (click)="handleClickMe($event)">Click Me</button>
+
+  <h3>Two Way Binding</h3>
+  <p>Course Name: {{course}}</p> <!-- interpolation-->
+  <input type="text" [value]="course"><!-- prop binding-->
+  <br><br>
+  <input type="text" [(ngModel)]="course">
+</div>
