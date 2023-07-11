@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { ConceptsComponent } from './concepts/concepts.component';
 import { FormsModule } from '@angular/forms';
 import { MenuListComponent } from './shared/components/menu-list/menu-list.component';
+import { EmployeeInfoComponent } from './concepts/components/employee-info/employee-info.component';
+import { UserProfileComponent } from './concepts/components/user-profile/user-profile.component';
 
 // Main switching box
 @NgModule({
@@ -18,7 +20,9 @@ import { MenuListComponent } from './shared/components/menu-list/menu-list.compo
     FooterComponent,
     HomeComponent,
     ConceptsComponent,
-    MenuListComponent
+    MenuListComponent,
+    EmployeeInfoComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,

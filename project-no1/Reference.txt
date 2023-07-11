@@ -96,3 +96,60 @@ Project Structure
               footer/
 
 
+Data Binding 
+---
+  * keeping the data in ts file and displayin it in HTML 
+  1. Interpolation [DONE]
+      TS => HTML 
+      {{}}
+
+  2. Property Binding [DONE]
+      TS => HTML 
+      []
+      2.1 Class Binding [TODO]
+      2.2 Style Binding [TODO]
+
+  3. Event Binding [DONE]
+      TS <== HTML 
+      ()
+
+  4. Two Way Binding 
+      TS <==> HTML 
+      [(ngModel)]
+
+  5. Custom Property Binding 
+  6. Custom Event Binding 
+   
+
+Cross Component Commn 
+----
+  1. Parent to Child Component Commn [DONE]
+      using Custom Property Binding 
+  2. Child to Parent Component Commn [DONE]
+      using Custom Event Binding 
+  3. Any to Any Component Commn 
+      3.1 using RxJS (Observables, Subject / Behaviour Subject, Subscription) 
+          [45 mins to 1 hour]
+      3.2 using NgRx (many do not have experience) [1.5 - 2.5 hours]
+
+====
+Directives 
+===
+  Special instructions to the DOM
+  1. Attribute Directive
+      examples: routerLink, routerLinkActive, routerLinkActiveOptions, formGroup, formControlName
+
+  2. Structural Directive 
+      *ngIf 
+      *ngFor 
+      ngSwitch 
+
+  3. Custom Attribute Directive 
+      ng g d directive-name
+
+  4. Custom structural Directive 
+      ng g d directive-name
+        Refer: https://github.com/arunprabu/employee-mgmt-ng-oct2022/blob/master/src/app/concepts/directives/demo-if.directive.ts
+
+        Refer: https://github.com/arunprabu/employee-mgmt-ng-oct2022/blob/master/src/app/concepts/directives/unless.directive.ts
+=========

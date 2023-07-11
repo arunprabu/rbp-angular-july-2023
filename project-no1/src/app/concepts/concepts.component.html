@@ -15,4 +15,21 @@
   <input type="text" [value]="course"><!-- prop binding-->
   <br><br>
   <input type="text" [(ngModel)]="course">
+  
+  <hr>
+  <h3>Parent to Child Component Communication using Custom Prop Binding</h3>
+  <!-- Step 2 of Custom Prop binding -- Let's pass the data thru the custom property -->
+  <app-employee-info 
+    [employeeName]="employeeList[0].name" 
+    [employeePhone]="employeeList[0].phone"></app-employee-info>
+  <app-employee-info 
+    [employeeName]="employeeList[1].name" 
+    [employeePhone]="employeeList[1].phone"></app-employee-info>
+
+  <hr>
+  <h3>Child to Parent Component Communication using Custom Event Binding</h3>
+  <!-- Step 4 of Custom Event Binding: Let's attach the handler for custom event-->
+  <app-user-profile (profileLoaded)="handleProfileLoaded($event)"></app-user-profile>
+  <h4>Data Received from Child Comp ==> Name: {{dataReceivedFromChild.name}} & City: {{dataReceivedFromChild.city}}</h4>
+  
 </div>

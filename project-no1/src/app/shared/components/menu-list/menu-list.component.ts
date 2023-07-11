@@ -8,6 +8,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuListComponent implements OnInit {
 
+  menus = [
+    {
+      id: 1,
+      title: 'Home',
+      url: '/'
+    },
+    {
+      id: 2,
+      title: 'Concepts',
+      url: '/concepts'
+    },
+    {
+      id: 3,
+      title: 'About',
+      url: '/about'
+    },
+    {
+      id: 4,
+      title: 'Contact',
+      url: '/contact'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
