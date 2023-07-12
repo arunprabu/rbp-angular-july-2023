@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuListComponent } from './shared/components/menu-list/menu-list.component';
 import { EmployeeInfoComponent } from './concepts/components/employee-info/employee-info.component';
 import { UserProfileComponent } from './concepts/components/user-profile/user-profile.component';
+import { UsersModule } from './users/users.module';
 
 // Main switching box
 @NgModule({
@@ -27,7 +28,8 @@ import { UserProfileComponent } from './concepts/components/user-profile/user-pr
   imports: [
     BrowserModule,
     FormsModule, // for ngModel
-    AppRoutingModule
+    AppRoutingModule,
+    UsersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

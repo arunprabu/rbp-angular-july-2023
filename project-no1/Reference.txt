@@ -153,3 +153,70 @@ Directives
 
         Refer: https://github.com/arunprabu/employee-mgmt-ng-oct2022/blob/master/src/app/concepts/directives/unless.directive.ts
 =========
+
+User Management (CRUD App)
+-----
+  1. Create User (Reactive Form)
+      http://localhost:4200/users/add
+      ng g c users/components/add-user -s 
+
+  2. List Users 
+      http://localhost:4200/users
+      ng g c users/components/users -s 
+
+  3. Fetch User Details by Id 
+      http://localhost:4200/users/1 
+      ng g c users/components/user-details -s 
+
+  4. Update User (Template Driven Form)
+      http://localhost:4200/users/1 
+
+  5. Delete User (TODO)
+      http://localhost:4200/users/1
+
+  Feature Module  (Creating Main Switching Box)
+  Feature Routing Module (Create Navigational map)
+    Nested Routing / Child Routing 
+    URL Param 
+    Query Param 
+  
+  Angular Forms 
+    1. Reactive Forms [RECOMMENDED]
+        * easy 
+        * built with html + ts 
+        * validate thru angular validators
+        * adv 
+          ---
+            1. suitable for unit testing 
+            2. suitable for complex form validation 
+
+        * disadv 
+        ----- 
+          * big learning curve
+
+        Steps: 
+        ----
+          1. have html form [done]
+          2. have TS equivalent for the html form tag and form inputs 
+          3. connect both html form and ts equivalents 
+          
+
+    2. Template Driven Forms 
+        * easiest 
+        * built with html 
+        * validations to be done with directives
+        * disadv
+        ---
+          1. not suitable for unit testing 
+          2. not suitable for complex form validation 
+  
+  Services 
+    Rest API call 
+    Http Client 
+    RxJS 
+      Observables, Subscription 
+
+
+    
+
+  
