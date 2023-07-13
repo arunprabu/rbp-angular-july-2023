@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { UsersService } from '../../services/users.service';
 
 @Component({
   selector: 'app-add-user',
@@ -17,10 +18,23 @@ export class AddUserComponent implements OnInit {
     phone: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email])
   });
+  isSaved = false;
 
-  constructor() { }
+  constructor( private usersService: UsersService ) { }
 
   ngOnInit(): void {
+  }
+
+  handleAddUser() {
+    console.log(this.addUserForm.value);
+    this.usersService.addUser(this.addUserForm.value)
+      .subscribe((res: any) => {
+        console.log(res);
+        if(res && res.id) {
+          this.isSaved = true;
+          this.addUserForm.reset();
+        }
+      })
   }
 
 }

@@ -8,7 +8,7 @@ import { UserDetailsComponent } from './components/user-details/user-details.com
 const userRoutes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'users/add', component: AddUserComponent },
-  { path: 'users/:id', component: UserDetailsComponent }   // url param
+  { path: 'users/:userId', component: UserDetailsComponent }   // url param is id
 ];
 
 @NgModule({

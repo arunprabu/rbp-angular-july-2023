@@ -12,6 +12,7 @@ import { MenuListComponent } from './shared/components/menu-list/menu-list.compo
 import { EmployeeInfoComponent } from './concepts/components/employee-info/employee-info.component';
 import { UserProfileComponent } from './concepts/components/user-profile/user-profile.component';
 import { UsersModule } from './users/users.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Main switching box
 @NgModule({
@@ -28,6 +29,7 @@ import { UsersModule } from './users/users.module';
   imports: [
     BrowserModule,
     FormsModule, // for ngModel
+    HttpClientModule,
     AppRoutingModule,
     UsersModule
   ],

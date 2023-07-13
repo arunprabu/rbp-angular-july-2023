@@ -199,7 +199,7 @@ User Management (CRUD App)
           1. have html form [done]
           2. have TS equivalent for the html form tag and form inputs 
           3. connect both html form and ts equivalents 
-          
+
 
     2. Template Driven Forms 
         * easiest 
@@ -219,4 +219,38 @@ User Management (CRUD App)
 
     
 
-  
+
+Class Commn 
+--
+  1. Thru Object creation (instantiation)
+  2. thru inheritance 
+  3. thru dep injection 
+
+
+@Injectable({
+  providedIn: 'root'
+})
+class RepairService {
+  doRepair(){
+
+  }
+}
+
+class Car  {
+  constructor( private repairService: RepairService ){
+    this.repairService.doRepair();
+  }
+}
+
+class Bike {
+  constructor( private repairService: RepairService ){
+    this.repairService.doRepair();
+  }
+
+}
+
+class Bus {
+  constructor( private repairService: RepairService ){
+    this.repairService.doRepair();
+  }
+}

@@ -4,11 +4,11 @@
     <div class="card col-md-12">
       <!-- TODO: show loader/spinner here-->
       <div class="card-body">
-        <h5 class="card-title">John</h5>
+        <h5 class="card-title">{{user?.name}}</h5>
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
           card's content.</p>
-        <p>Phone: 435654674657</p>
-        <p>Email: j@k.com</p>
+        <p>Phone: {{user?.phone}}</p>
+        <p>Email: {{user?.email}}</p>
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployeeModal">Edit</button>
         <button type="button" class="btn btn-danger">Delete</button>
 
