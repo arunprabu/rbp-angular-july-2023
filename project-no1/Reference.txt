@@ -254,3 +254,16 @@ class Bus {
     this.repairService.doRepair();
   }
 }
+
+
+===
+What's Observable?
+    It's a collection that returned over time. 
+    It's a push, that sends multiple values
+    Observable is like restaurant kitchen.
+    If you subscribe to observable, it decides when to give information 
+Now, What's RxJs?
+    Various method of operators, you can chain on Observables to filter data, sort, 
+
+Refer: My Example on Observables and RxJS.
+http://jsbin.com/kuzifehivi/4/edit?html,js,console

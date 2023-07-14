@@ -4,7 +4,7 @@ import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // Main switching box for the feature
 @NgModule({
@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     ReactiveFormsModule, // needed for formGroup
     UsersRoutingModule
   ]

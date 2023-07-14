@@ -9,11 +9,14 @@
           card's content.</p>
         <p>Phone: {{user?.phone}}</p>
         <p>Email: {{user?.email}}</p>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployeeModal">Edit</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editEmployeeModal"
+          (click)="handleEditModalOpen()">Edit</button>
         <button type="button" class="btn btn-danger">Delete</button>
 
         <!-- Modal -->
-        <div class="modal fade" id="editEmployeeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" 
+          id="editEmployeeModal" tabindex="-1" role="dialog" 
+          aria-labelledby="exampleModalLabel"
           aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -21,14 +24,14 @@
                 <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-              <div class="modal-body">
+              <div class="modal-body" *ngIf="duplicateUser">
                 <!-- if you want html validation use ngNativeValidate in form tag -->
-                <form >
+                <form ngNativeValidate (ngSubmit)="handleEditUser()">
                   <div class="form-group row mb-3">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Name</label>
                     <div class="col-sm-10">
-                      <input type="text" class="form-control" placeholder="Enter name" name="empName"
-                        required>
+                      <input type="text" class="form-control" placeholder="Enter name" name="fullName"
+                        [(ngModel)]="duplicateUser.name" required>
                       <div class="invalid-feedback">
                         Name is Required
                       </div>
@@ -38,7 +41,7 @@
                     <label for="staticEmail" class="col-sm-2 col-form-label">Phone</label>
                     <div class="col-sm-10">
                       <input type="text" class="form-control" placeholder="Enter Phone" name="phone"
-                         required>
+                        [(ngModel)]="duplicateUser.phone" required>
                       <div class="invalid-feedback">
                         Phone is Required
                       </div>
@@ -47,8 +50,9 @@
                   <div class="form-group row mb-3">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                      <input type="email" class="form-control" name="email"
-                        placeholder="Enter Email">
+                      <input type="email" class="form-control" 
+                      name="email" placeholder="Enter Email"
+                        [(ngModel)]="duplicateUser.email" required>
                       <div class="invalid-feedback">
                         <div>Email is Required</div>
                         <div>Email seems to be not valid</div>
@@ -56,7 +60,7 @@
                     </div>
                   </div>
 
-                  <div class="alert alert-success">
+                  <div class="alert alert-success" *ngIf="isUpdated">
                     Updated successfully!
                   </div>
 

@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UserDetailsComponent implements OnInit {
   user: any;
+  duplicateUser: any;
+  isUpdated = false;
 
   constructor(private usersService: UsersService, private route: ActivatedRoute) { }
 
@@ -23,4 +25,19 @@ export class UserDetailsComponent implements OnInit {
       })
   }
 
+  handleEditModalOpen() {
+    this.duplicateUser = {
+      ...this.user
+    };
+  }
+
+  handleEditUser() {
+    // get the form data
+    console.log(this.duplicateUser);
+    this.usersService.updateUser(this.duplicateUser)
+      .subscribe((res: any) => {
+        console.log(res);
+        this.isUpdated = true;
+      })
+  }
 }
