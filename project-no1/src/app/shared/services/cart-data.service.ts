@@ -42,7 +42,7 @@ export class CartDataService {
         console.log(updatedCartItems);
         // the following line updates the other components which are subscribing
         this.cartItems.next(updatedCartItems); 
-      })
+      });
   }
   
 }

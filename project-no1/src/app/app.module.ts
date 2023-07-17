@@ -14,6 +14,8 @@ import { UserProfileComponent } from './concepts/components/user-profile/user-pr
 import { UsersModule } from './users/users.module';
 import { HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/components/products/products.component';
+import { AboutComponent } from './about/components/about/about.component';
+import { LoginComponent } from './auth/components/login/login.component';
 
 // Main switching box
 @NgModule({
@@ -26,7 +28,9 @@ import { ProductsComponent } from './products/components/products/products.compo
     MenuListComponent,
     EmployeeInfoComponent,
     UserProfileComponent,
-    ProductsComponent
+    ProductsComponent,
+    AboutComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
