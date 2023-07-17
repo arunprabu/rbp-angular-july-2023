@@ -17,7 +17,7 @@ export class UsersComponent implements OnInit {
       .subscribe((res: any[]) => {
         console.log(res);
         this.users = res;
-      })
+      });
   }
 
 }

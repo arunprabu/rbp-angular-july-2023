@@ -26,11 +26,16 @@ export class MenuListComponent implements OnInit {
     },
     {
       id: 4,
+      title: 'Products',
+      url: '/products'
+    },
+    {
+      id: 5,
       title: 'About',
       url: '/about'
     },
     {
-      id: 5,
+      id: 6,
       title: 'Contact',
       url: '/contact'
     }

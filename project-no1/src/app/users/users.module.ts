@@ -5,6 +5,7 @@ import { UsersComponent } from './components/users/users.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UsersService } from './services/users.service';
 
 // Main switching box for the feature
 @NgModule({
@@ -18,6 +19,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule, // needed for formGroup
     UsersRoutingModule
+  ],
+  providers: [
+    UsersService
   ]
 })
 export class UsersModule { }

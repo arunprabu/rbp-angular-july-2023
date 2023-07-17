@@ -4,9 +4,7 @@ import { Observable, map } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UsersService {
 
   constructor(private http: HttpClient) { }
