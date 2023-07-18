@@ -12,10 +12,11 @@ import { MenuListComponent } from './shared/components/menu-list/menu-list.compo
 import { EmployeeInfoComponent } from './concepts/components/employee-info/employee-info.component';
 import { UserProfileComponent } from './concepts/components/user-profile/user-profile.component';
 import { UsersModule } from './users/users.module';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { ProductsComponent } from './products/components/products/products.component';
 import { AboutComponent } from './about/components/about/about.component';
 import { LoginComponent } from './auth/components/login/login.component';
+import { AuthInterceptor } from './shared/interceptors/auth.interceptor';
 
 // Main switching box
 @NgModule({
@@ -39,7 +40,13 @@ import { LoginComponent } from './auth/components/login/login.component';
     AppRoutingModule,
     UsersModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

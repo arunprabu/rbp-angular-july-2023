@@ -22,13 +22,14 @@ export class UserProfileComponent implements OnInit {
     city: 'London'
   }
 
+  msg = 'wow';
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   handleSendDataToParent(){
-    debugger;
     // step 3: Let's trigger the event thru program
     this.profileLoaded.emit(this.profile); //sending the profile data as event object
   }

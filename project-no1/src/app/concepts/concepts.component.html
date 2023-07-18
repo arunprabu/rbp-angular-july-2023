@@ -31,5 +31,6 @@
   <!-- Step 4 of Custom Event Binding: Let's attach the handler for custom event-->
   <app-user-profile (profileLoaded)="handleProfileLoaded($event)"></app-user-profile>
   <h4>Data Received from Child Comp ==> Name: {{dataReceivedFromChild.name}} & City: {{dataReceivedFromChild.city}}</h4>
-  
+
+  <p>Message From Child Component : {{ dataAccessedFromChild }}</p>
 </div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @Component({
   selector: 'app-concepts',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class ConceptsComponent implements OnInit {
+export class ConceptsComponent implements OnInit, AfterViewInit {
   devName = "Arun"; // interpolation
   clientName = "citi bank"; // prop binding
   course = 'Angular 14'; // two way binding
@@ -22,14 +23,27 @@ export class ConceptsComponent implements OnInit {
     }
   ];
 
+  // related to custom event binding
   dataReceivedFromChild = {
     name: '',
     city: ''
   }
 
-  constructor() { }
+  //@viewchild related -- parent comp is accessing the data
+  dataAccessedFromChild: string = '';
+
+  @ViewChild(UserProfileComponent, {static: false}) userProfile!: UserProfileComponent;
+
+  constructor(private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
+  }
+
+  // when static:false --- the data from child comp will be available in this hook
+  ngAfterViewInit(): void {
+    console.log(this.userProfile);
+    this.dataAccessedFromChild = this.userProfile.msg;
+    this.cd.detectChanges();
   }
 
   // event binding

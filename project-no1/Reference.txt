@@ -126,7 +126,10 @@ Cross Component Commn
   1. Parent to Child Component Commn [DONE]
       using Custom Property Binding 
   2. Child to Parent Component Commn [DONE]
-      using Custom Event Binding 
+      2.1 using Custom Event Binding [DONE]
+          * child comp has to send the data to parent thru event emitting
+      2.2 using ViewChild() or ViewChildren()
+          * the above will help the parent comp access the data from child 
   3. Any to Any Component Commn 
       3.1 using RxJS (Observables, Subject / Behaviour Subject, Subscription) 
           [45 mins to 1 hour]

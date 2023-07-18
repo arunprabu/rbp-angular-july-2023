@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -28,7 +30,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -36,6 +38,23 @@ export class LoginComponent implements OnInit {
   handleLogin(loginForm: any) {
     console.log(loginForm.value);
     // send the above form data to auth service 
-    // get the response from auth service
+    this.authService.login(loginForm.value)
+      .subscribe((res: any) => {
+        console.log(res);
+        // 3 places to save the token
+        /*
+          1. cookies 
+          2. localStorage
+          3. sessionStorage (prefer)
+        */
+
+        sessionStorage.setItem('authToken', res.token);
+        // The following is buggy. To redirect to the right url 
+        // Refer: https://github.com/arunprabu/contact-manager-ng13-aug2022/blob/master/src/app/auth/components/login/login.component.ts
+
+        // this.router.navigate(['about']);
+        const redirectToURL = this.activatedRoute.snapshot.queryParams['redirectTo'];
+        this.router.navigateByUrl(redirectToURL);
+      });
   }
 }
