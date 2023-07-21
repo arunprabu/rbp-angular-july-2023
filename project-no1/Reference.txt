@@ -364,11 +364,15 @@ Automated Testing
 // How to write the test cases ?
 // Where to write test cases? 
 // How to test our app against the test cased we wrote? 
+    ng test 
+
+// How to generate test report?
+  ng test --no-watch --code-coverage
 
 
 ====
 angular material [DONE]
-Unit Testing 
+Unit Testing [DONE]
 NgRx 
 ng library 
 
